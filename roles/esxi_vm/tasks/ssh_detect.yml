@@ -1,0 +1,20 @@
+- name: Query ESXi host services
+  community.vmware.vmware_host_service_manager:
+    hostname: "{{ vsphere_host }}"
+    username: "{{ vsphere_user }}"
+    password: "{{ vsphere_pass }}"
+    validate_certs: false
+    esxi_hostname: "{{ inventory_hostname }}"
+    state: list
+  delegate_to: localhost
+  register: esxi_services
+
+- name: Detect SSH state
+  set_fact:
+    ssh_was_enabled: >-
+      {{
+        (esxi_services.host_service_info
+         | selectattr('key', 'equalto', 'TSM-SSH')
+         | map(attribute='running')
+         | first) | bool
+      }}

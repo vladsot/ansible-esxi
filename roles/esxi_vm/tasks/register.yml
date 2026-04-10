@@ -1,0 +1,11 @@
+- name: Register VM
+  community.vmware.vmware_guest_register:
+    hostname: "{{ vsphere_host }}"
+    username: "{{ vsphere_user }}"
+    password: "{{ vsphere_pass }}"
+    validate_certs: false
+    name: "{{ vm_name }}"
+    datastore: "{{ datastore }}"
+    path: "{{ vm_name }}/{{ vm_name }}.vmx"
+    folder: /
+  delegate_to: localhost

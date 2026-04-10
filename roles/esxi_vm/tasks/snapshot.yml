@@ -1,0 +1,10 @@
+- name: Create snapshot
+  community.vmware.vmware_guest_snapshot:
+    hostname: "{{ vsphere_host }}"
+    username: "{{ vsphere_user }}"
+    password: "{{ vsphere_pass }}"
+    validate_certs: false
+    name: "{{ vm_name }}"
+    state: present
+    snapshot_name: "{{ snapshot_name }}"
+  delegate_to: localhost

@@ -1,0 +1,6 @@
+- hosts: esxi
+  roles:
+    - role: esxi_vm
+      vars:
+        vm_name: vm01
+        template_name: ubuntu-template

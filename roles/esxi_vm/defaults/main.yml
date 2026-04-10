@@ -1,0 +1,5 @@
+vm_name: ""
+template_name: ""
+template_vmx: "{{ template_name }}.vmx"
+snapshot_name: pre_change
+power_state: powered-on

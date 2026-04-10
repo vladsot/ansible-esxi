@@ -1,0 +1,11 @@
+- name: Enable SSH if needed
+  community.vmware.vmware_host_service_manager:
+    hostname: "{{ vsphere_host }}"
+    username: "{{ vsphere_user }}"
+    password: "{{ vsphere_pass }}"
+    validate_certs: false
+    esxi_hostname: "{{ inventory_hostname }}"
+    service_name: TSM-SSH
+    state: started
+  delegate_to: localhost
+  when: not ssh_was_enabled

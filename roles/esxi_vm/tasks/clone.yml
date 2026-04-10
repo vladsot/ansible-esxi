@@ -1,0 +1,6 @@
+- name: Clone VM directory
+  shell: >
+    cp -r "{{ esxi_datastore_path }}/{{ template_name }}"           "{{ esxi_datastore_path }}/{{ vm_name }}"
+  args:
+    creates: "{{ esxi_datastore_path }}/{{ vm_name }}"
+  delegate_to: "{{ inventory_hostname }}"

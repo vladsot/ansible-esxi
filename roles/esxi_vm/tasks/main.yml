@@ -1,0 +1,15 @@
+- import_tasks: ssh_detect.yml
+- import_tasks: ssh_enable.yml
+  tags: [deploy]
+- import_tasks: clone.yml
+  tags: [deploy]
+- import_tasks: register.yml
+  tags: [deploy]
+- import_tasks: power.yml
+  tags: [power]
+- import_tasks: snapshot.yml
+  tags: [snapshot]
+- import_tasks: ssh_disable.yml
+  tags: [deploy, destroy]
+- import_tasks: destroy.yml
+  tags: [destroy]

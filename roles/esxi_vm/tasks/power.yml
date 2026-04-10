@@ -1,0 +1,9 @@
+- name: Set power state
+  community.vmware.vmware_guest_powerstate:
+    hostname: "{{ vsphere_host }}"
+    username: "{{ vsphere_user }}"
+    password: "{{ vsphere_pass }}"
+    validate_certs: false
+    name: "{{ vm_name }}"
+    state: "{{ power_state }}"
+  delegate_to: localhost
