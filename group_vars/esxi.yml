@@ -1,6 +1,6 @@
-vsphere_host: 192.168.10.50
-vsphere_user: root
+vsphere_host: 10.128.204.2
+vsphere_user: vs
 vsphere_pass: "{{ vault_esxi_password }}"
 
-datastore: datastore1
-esxi_datastore_path: "/vmfs/volumes/{{ datastore }}"
+datastore: Lab%255fVMs%255fDatastore
+esxi_datastore_path: "ha%252ddatacenter/{{ datastore }}"

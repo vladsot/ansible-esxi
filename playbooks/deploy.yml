@@ -2,5 +2,5 @@
   roles:
     - role: esxi_vm
       vars:
-        vm_name: vm01
-        template_name: ubuntu-template
+        vm_name: Vlad-vm01
+        template_name: Vlad%2dTemplates%2f/EMS746/forticlientems_vm.7.4.6.2170.M

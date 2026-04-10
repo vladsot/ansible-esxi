@@ -1,2 +1,2 @@
 [esxi]
-esxi01 ansible_host=192.168.10.50
+esxi01 ansible_host=10.128.204.2
